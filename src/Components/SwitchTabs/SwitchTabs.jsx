@@ -10,18 +10,18 @@ const SwitchTabs = ({data ,onTabChange}) => {
         setTimeout(() => {
             setSelectedTabs(index)
         }, 3000);
-        onTabChange(tab , index)
+        onTabChange(tab,index)
     }
 
   return (
     <div className='switchingTabs'>
         <div className="tabItems">
             {
-                data.map((tab , index) => (
-                    <span key={index} className={`tabItem ${selectedTab === index ? "active" : ""}`} onClick={() => activeTab(tab , index)}>{tab}</span>
+                data.map((tab, index) => (
+                    <span key={index} className={`tabItem ${selectedTab === index ? "active" : ""}`} onClick={() => activeTab(tab, index)}>{tab}</span>
                 ))
             }
-            <span className="movingBg" style={{left:left}}/>
+            <span className="movingBg" style={{left}}/>
         </div>
     </div>
   )
