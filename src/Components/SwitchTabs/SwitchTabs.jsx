@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './SwitchTabs.scss'
 
-const SwitchTabs = ({data ,onTabChange}) => {
+const SwitchTabs = ({data,onTabChange}) => {
     const [selectedTab , setSelectedTabs] = useState(0)
     const [left, setLeft] = useState(0)
 
