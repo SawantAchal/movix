@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import ContentWrapper from '../../../Components/ContentWrapper/ContentWrapper'
 import SwitchTabs from '../../../Components/SwitchTabs/SwitchTabs'
 import useFetch from '../../../Hooks/useFetch'
+import Carousal from '../../../Components/corousel/Carousal'
 
 const Trending = () => {
     const [endpoint , setEndPoint] = useState("day")
@@ -10,7 +11,7 @@ const Trending = () => {
     const {data , loading} = useFetch(`/trending/all/${endpoint}`)
 
     //control for switch tab
-    const OnTabChange = (tab) => {
+    const onTabChange = (tab) => {
         setEndPoint(tab === "Day" ? "day" : "week");
     };
   return (
@@ -18,8 +19,9 @@ const Trending = () => {
         <ContentWrapper>
             <span className='carouselTitle'>Trending</span>
             {/* dyanmic component */}
-            <SwitchTabs  data={["Day" , "Week"]} OnTabChange={OnTabChange}/>
+            <SwitchTabs  data={["Day" , "Week"]} onTabChange={onTabChange}/>
         </ContentWrapper>
+        <Carousal data={data?.results} loading={loading}/>
     </div>
   )
 }
