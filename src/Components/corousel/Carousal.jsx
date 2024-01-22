@@ -22,6 +22,7 @@ const Carousal = ({data , loading}) => {
 
     }
 
+    // created method for do not repeat the class for sKItem
     const sKItem = () => {
         return(
             <div className="skeletonItem">
