@@ -63,7 +63,7 @@ const DetailsBanner = ({ video, crew }) => {
                                     <div className="subtitle">{data.tagline}</div>
                                     <Genres data={_genres} />
                                     <div className="row"><CircleRating rating={data.vote_average.toFixed()} />
-                                        <div className="playbtn" onClick={() =>{}}>
+                                        <div className="playbtn" onClick={() =>{setShow(true), setVideoId(video.key)}}>
                                             <PlayIcon />
                                             <span className="text">Watch Trailer</span>
                                         </div>
